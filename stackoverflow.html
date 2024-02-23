@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</head>
+<style>
+  html{
+    margin: 0px;
+    padding: 0px;
+  }
+    *{
+        background-image: url();
+    }
+   .text-bg-dark{
+    background-color: white !important;
+    
+   }
+   .text-white{
+    color: grey !important;
+   }
+   
+  .btn-outline-light{
+    color: #1b75d0;
+    border-color: #1b75d0 ;
+  }
+  .btn-warning{
+    background-color: #1b75d0;
+    color: white;
+    
+  }
+ .px-2{
+    margin-left: 10px;
+ }
+ .text-end img{
+    height: 30px;
+    border-radius: 4px;
+  }
+ .svgg{
+  margin-left: 2%;
+  fill:rgb(91, 89, 89);
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 12%;
+ }
+ #content div{
+  border: 1px solid grey;
+  height: 100px;
+  margin-bottom: 10px; /* Add some margin between the divs */
+    
+ }
+ 
+.wrap{
+  display: flex;
+  flex-direction: row;
+  
+}
+ #content{
+width: 50%;
+margin-top:0  ;
+
+ }
+ #content>div{
+  margin: 0;
+  padding: 2%;
+  width: auto;
+  height: 13%;
+ }
+ .btn {
+    color: #0c7ae8;
+    background-color: #92c0ed;
+    width:auto;
+    height: auto;
+    font-size: x-small;
+    padding: 4px;
+    
+}
+#content div p{
+  color:#005cb8;
+  font-weight: 400;
+  
+  
+}
+
+h4{
+  font-weight: 400;
+  margin-bottom: 0px;
+}
+.ques{
+  background-color:#1b75d0; 
+  color: white;
+  width: auto;
+  height: auto;
+  font-size:small ;
+}
+.first{
+  display: flex;
+  justify-content: space-between;
+  
+}
+.first>button{
+  
+ height: 35%;
+ width:15%;
+ margin-bottom:0px;
+}
+hr{
+  margin: 0px;
+}
+.votes{
+  display: flex;
+  flex-direction: column;
+  width: auto;
+  height: auto;
+  border: none !important;
+  font-size: small;
+  margin-bottom: 0px;
+  
+}
+.votes>p{
+  color:rgba(0, 0, 0, 0.838) !important;
+  margin: 5px;
+
+}
+
+.vote1{
+  display: flex;
+  border: none !important;
+  margin-left: 10%;
+  
+  
+}
+.but{
+  width: 40% ;
+  margin-left: 10%;
+  height: 20px !important;
+  border: none !important;
+}
+
+.yellow{
+  width: 28%;
+  
+}
+.abd{
+  display: flex;
+  gap: 100%;
+  
+}
+.one{
+  background-color: 
+#f4d27ba0;
+border:1px solid #f4d27b;  
+}
+.two{
+  background-color: 
+#f4d27b3f;
+border:1px solid #f4d27b;  
+}
+.three{
+  background-color: 
+#f4d27b3f;
+
+border:1px solid #f4d27b;  
+}
+</style>
+<body>
+    <div class="bg-white ">
+
+   
+    <header class="p-3 text-bg-dark">
+        <div class="container ">
+          <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+            <a href="/" class="  d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
+                <img src="data:image/png;base64,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" height="28px" alt="">
+            </a>
+    
+            <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+                
+              <li><a href="#" class="nav-link px-2 text-white">About</a></li>
+              <li><a href="#" class="nav-link px-2 text-white">Products</a></li>
+              <li><a href="#" class="nav-link px-2 text-white">For Teams</a></li>
+            </ul>
+            <div class="col">
+            <form class=" col-12 col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search">
+                
+              <input type="search" class="form-control form-control-dark text-bg-dark"  placeholder=" Search..." aria-label="Search">
+            </form>
+        </div>
+            <div class="text-end">
+              <img src="https://lh3.googleusercontent.com/a/ACg8ocIfUfyim0wBRyOWhXVnQFlz9QBaQUBWPkv3OITe42DJLmA=k-s256" alt="">
+              
+            </div>
+            <div class="svgg">
+              <svg xmlns="http://www.w3.org/2000/svg" width="25" height="30" class="bi bi-inbox-fill" viewBox="0 0 16 16">
+                <path d="M4.98 4a.5.5 0 0 0-.39.188L1.54 8H6a.5.5 0 0 1 .5.5 1.5 1.5 0 1 0 3 0A.5.5 0 0 1 10 8h4.46l-3.05-3.812A.5.5 0 0 0 11.02 4zm-1.17-.437A1.5 1.5 0 0 1 4.98 3h6.04a1.5 1.5 0 0 1 1.17.563l3.7 4.625a.5.5 0 0 1 .106.374l-.39 3.124A1.5 1.5 0 0 1 14.117 13H1.883a1.5 1.5 0 0 1-1.489-1.314l-.39-3.124a.5.5 0 0 1 .106-.374z"/>
+              </svg>
+              <svg xmlns="http://www.w3.org/2000/svg" width="25" height="20"  class="bi bi-trophy-fill" viewBox="0 0 16 16">
+                <path d="M2.5.5A.5.5 0 0 1 3 0h10a.5.5 0 0 1 .5.5q0 .807-.034 1.536a3 3 0 1 1-1.133 5.89c-.79 1.865-1.878 2.777-2.833 3.011v2.173l1.425.356c.194.048.377.135.537.255L13.3 15.1a.5.5 0 0 1-.3.9H3a.5.5 0 0 1-.3-.9l1.838-1.379c.16-.12.343-.207.537-.255L6.5 13.11v-2.173c-.955-.234-2.043-1.146-2.833-3.012a3 3 0 1 1-1.132-5.89A33 33 0 0 1 2.5.5m.099 2.54a2 2 0 0 0 .72 3.935c-.333-1.05-.588-2.346-.72-3.935m10.083 3.935a2 2 0 0 0 .72-3.935c-.133 1.59-.388 2.885-.72 3.935"/>
+              </svg>
+              <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25"  class="bi bi-question-circle-fill" viewBox="0 0 16 16">
+                <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M5.496 6.033h.825c.138 0 .248-.113.266-.25.09-.656.54-1.134 1.342-1.134.686 0 1.314.343 1.314 1.168 0 .635-.374.927-.965 1.371-.673.489-1.206 1.06-1.168 1.987l.003.217a.25.25 0 0 0 .25.246h.811a.25.25 0 0 0 .25-.25v-.105c0-.718.273-.927 1.01-1.486.609-.463 1.244-.977 1.244-2.056 0-1.511-1.276-2.241-2.673-2.241-1.267 0-2.655.59-2.75 2.286a.237.237 0 0 0 .241.247m2.325 6.443c.61 0 1.029-.394 1.029-.927 0-.552-.42-.94-1.029-.94-.584 0-1.009.388-1.009.94 0 .533.425.927 1.01.927z"/>
+              </svg>
+              <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25"  class="bi bi-list" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5"/>
+              </svg>
+          </div>
+            
+          </div>
+          
+        </div>
+        
+      </header>
+    </div>
+    <hr>
+    <div class="wrap">
+      
+
+      <div class="d-flex flex-column flex-shrink-0 p-3 text-bg-dark col-6" style="width: 280px  ;">
+        
+        <hr>
+        <ul class="nav nav-pills flex-column mb-auto">
+          <li class="nav-item">
+            <a href="#" class="nav-link active" aria-current="page">
+              <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#home"></use></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-house-fill" viewBox="0 0 16 16">
+              <path d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L8 2.207l6.646 6.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293z"/>
+              <path d="m8 3.293 6 6V13.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5V9.293z"/>
+            </svg>
+            Home
+          </a>
+        </li>
+        <li>
+          <a href="#" class="nav-link text-white">
+            <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#speedometer2"></use></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-question-square" viewBox="0 0 16 16">
+              <path d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2z"/>
+              <path d="M5.255 5.786a.237.237 0 0 0 .241.247h.825c.138 0 .248-.113.266-.25.09-.656.54-1.134 1.342-1.134.686 0 1.314.343 1.314 1.168 0 .635-.374.927-.965 1.371-.673.489-1.206 1.06-1.168 1.987l.003.217a.25.25 0 0 0 .25.246h.811a.25.25 0 0 0 .25-.25v-.105c0-.718.273-.927 1.01-1.486.609-.463 1.244-.977 1.244-2.056 0-1.511-1.276-2.241-2.673-2.241-1.267 0-2.655.59-2.75 2.286m1.557 5.763c0 .533.425.927 1.01.927.609 0 1.028-.394 1.028-.927 0-.552-.42-.94-1.029-.94-.584 0-1.009.388-1.009.94"/>
+            </svg> Questions
+          </a>
+        </li>
+        <li>
+          <a href="#" class="nav-link text-white">
+            <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#table"></use></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-tags" viewBox="0 0 16 16">
+              <path d="M3 2v4.586l7 7L14.586 9l-7-7zM2 2a1 1 0 0 1 1-1h4.586a1 1 0 0 1 .707.293l7 7a1 1 0 0 1 0 1.414l-4.586 4.586a1 1 0 0 1-1.414 0l-7-7A1 1 0 0 1 2 6.586z"/>
+              <path d="M5.5 5a.5.5 0 1 1 0-1 .5.5 0 0 1 0 1m0 1a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3M1 7.086a1 1 0 0 0 .293.707L8.75 15.25l-.043.043a1 1 0 0 1-1.414 0l-7-7A1 1 0 0 1 0 7.586V3a1 1 0 0 1 1-1z"/>
+            </svg>Tags
+          </a>
+        </li>
+        <li>
+          <a href="#" class="nav-link text-white">
+            <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#grid"></use></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bookmark-fill" viewBox="0 0 16 16">
+              <path d="M2 2v13.5a.5.5 0 0 0 .74.439L8 13.069l5.26 2.87A.5.5 0 0 0 14 15.5V2a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2"/>
+            </svg>Savers
+          </a>
+        </li>
+        <li>
+          <a href="#" class="nav-link text-white">
+            <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#people-circle"></use></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-people-fill" viewBox="0 0 16 16">
+              <path d="M7 14s-1 0-1-1 1-4 5-4 5 3 5 4-1 1-1 1zm4-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6m-5.784 6A2.24 2.24 0 0 1 5 13c0-1.355.68-2.75 1.936-3.72A6.3 6.3 0 0 0 5 9c-4 0-5 3-5 4s1 1 1 1zM4.5 8a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5"/>
+            </svg>Users
+          </a>
+          <a href="#" class="nav-link text-white">
+            <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#people-circle"></use></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-suitcase-lg-fill" viewBox="0 0 16 16">
+              <path d="M7 0a2 2 0 0 0-2 2H1.5A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14H2a.5.5 0 0 0 1 0h10a.5.5 0 0 0 1 0h.5a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2H11a2 2 0 0 0-2-2zM6 2a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1zM3 13V3h1v10zm9 0V3h1v10z"/>
+            </svg> Companies   
+          </a>
+          <a href="#" class="nav-link text-white">
+            <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#people-circle"></use></svg>
+            LABS     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-info-circle-fill" viewBox="0 0 16 16">
+              <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16m.93-9.412-1 4.705c-.07.34.029.533.304.533.194 0 .487-.07.686-.246l-.088.416c-.287.346-.92.598-1.465.598-.703 0-1.002-.422-.808-1.319l.738-3.468c.064-.293.006-.399-.287-.47l-.451-.081.082-.381 2.29-.287zM8 5.5a1 1 0 1 1 0-2 1 1 0 0 1 0 2"/>
+            </svg>
+          </a>
+          
+          <a href="#" class="nav-link text-white">
+            <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#people-circle"></use></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chat-left-fill" viewBox="0 0 16 16">
+              <path d="M2 0a2 2 0 0 0-2 2v12.793a.5.5 0 0 0 .854.353l2.853-2.853A1 1 0 0 1 4.414 12H14a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2z"/>
+            </svg>  Discussions  
+          </a>
+          <a href="#" class="nav-link text-white">
+            <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#people-circle"></use></svg>
+            COLLECTIVES <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus" viewBox="0 0 16 16">
+              <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4"/>
+            </svg>
+          </a>
+          
+          <a href="#" class="nav-link text-white">
+            <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#people-circle"></use></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-stars" viewBox="0 0 16 16">
+              <path d="M7.657 6.247c.11-.33.576-.33.686 0l.645 1.937a2.89 2.89 0 0 0 1.829 1.828l1.936.645c.33.11.33.576 0 .686l-1.937.645a2.89 2.89 0 0 0-1.828 1.829l-.645 1.936a.361.361 0 0 1-.686 0l-.645-1.937a2.89 2.89 0 0 0-1.828-1.828l-1.937-.645a.361.361 0 0 1 0-.686l1.937-.645a2.89 2.89 0 0 0 1.828-1.828zM3.794 1.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387A1.73 1.73 0 0 0 4.593 5.69l-.387 1.162a.217.217 0 0 1-.412 0L3.407 5.69A1.73 1.73 0 0 0 2.31 4.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387A1.73 1.73 0 0 0 3.407 2.31zM10.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.16 1.16 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.16 1.16 0 0 0-.732-.732L9.1 2.137a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732z"/>
+            </svg> Explore Collectives 
+          </a>
+          <a href="#" class="nav-link text-white">
+            <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#people-circle"></use></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-suitcase-lg" viewBox="0 0 16 16">
+              <path d="M5 2a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2h3.5A1.5 1.5 0 0 1 16 3.5v9a1.5 1.5 0 0 1-1.5 1.5H14a.5.5 0 0 1-1 0H3a.5.5 0 0 1-1 0h-.5A1.5 1.5 0 0 1 0 12.5v-9A1.5 1.5 0 0 1 1.5 2zm1 0h4a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1M1.5 3a.5.5 0 0 0-.5.5v9a.5.5 0 0 0 .5.5H3V3zM15 12.5v-9a.5.5 0 0 0-.5-.5H13v10h1.5a.5.5 0 0 0 .5-.5m-3 .5V3H4v10z"/>
+            </svg> Teams
+          </a>
+          
+        </li>
+      </ul>
+      
+      <hr>
+      
+      
+     
+    </div>
+   
+    <div id="content">
+      <div class="col-12 para c first">
+        <h4>Top Questions</h4>
+        <button type="button" class="btn btn-outline-primary ques">Ask Question</button>
+        
+       </div>
+       
+      <div class="col-12 para">
+        <div class="vote1">
+
+          <div class="votes">
+            <p>
+              0 votes
+            </p>
+            <p>0 answers</p>
+            <p>2 views</p>
+          </div>
+          <p> Set GCP Service account details in environment variable in .net</p>
+        </div>
+        <div class="but">
+
+          <button type="button" class="btn btn-primary">.net</button>
+          <button type="button" class="btn btn-secondary">google-cloud-platform</button>
+          <button type="button" class="btn btn-success">environment-variables</button>
+        </div>
+
+
+      </div>
+      <div class="col-12 para">
+        <div class="vote1">
+
+          <div class="votes">
+            <p>
+              2 votes
+            </p>
+            <p>2 answers</p>
+            <p>2 views</p>
+          </div>
+          <p>Compare part of url with contents of div</p>
+        </div>
+        <div class="but"> 
+
+          <button type="button" class="btn btn-primary">javascript</button>
+          <button type="button" class="btn btn-secondary">jquery</button>
+          <button type="button" class="btn btn-success">userscripts</button>
+        </div>
+       
+        
+      </div>
+     
+      <div class="col-12 para">
+        <div class="vote1">
+
+          <div class="votes">
+            <p>
+              0 votes
+            </p>
+            <p>1 answers</p>
+            <p>2 views</p>
+          </div>
+          <p> ReferenceError: sessionStorage is not defined</p>
+        </div>
+        <div class="but"> 
+
+          <button type="button" class="btn btn-primary">react.js</button>
+          <button type="button" class="btn btn-secondary">next.js13</button>
+          <button type="button" class="btn btn-success">session storage</button>
+        </div>
+        
+        
+      </div>
+      <div class="col-12 para">
+        <div class="vote1">
+
+          <div class="votes">
+            <p>
+              0 votes
+            </p>
+            <p>0 answers</p>
+            <p>0 views</p>
+          </div>
+          <p> Rails "bin/dev server" and "rails server"</p>
+        </div>
+        <div class="but">
+        <button type="button" class="btn btn-primary">ruby-on-rails/button>
+          
+           </div>
+      </div>
+      <div class="col-12 para">
+        <div class="vote1">
+
+          <div class="votes">
+            <p>
+              -1 votes
+            </p>
+            <p>0 answers</p>
+            <p>3 views</p>
+          </div>
+          <p>I want to protect multiple routes under specific path in middleware, is there a way for me to do?</p> 
+        </div>
+        <div class="but"> 
+
+          <button type="button" class="btn btn-primary">typescript</button>
+          <button type="button" class="btn btn-secondary">react.js</button>
+          <button type="button" class="btn btn-success">next.js</button>
+        </div>
+       
+        
+      </div>
+      <div class="col-12 para">
+        <div class="vote1">
+
+          <div class="votes">
+            <p>
+              3 votes
+            </p>
+            <p>2 answers</p>
+            <p>11 views</p>
+          </div>
+          <p>Github pages not building "Error: undefined method `yaml_file?' for #<Jekyll::Page"></Jekyll::Page></p>
+        </div>
+        <div class="but"> 
+
+          <button type="button" class="btn btn-primary">github</button>
+          <button type="button" class="btn btn-secondary">middleware</button>
+          <button type="button" class="btn btn-success">firebase</button>
+        </div>
+        
+      </div>
+      <div class="col-12 para">
+        <div class="vote1">
+
+          <div class="votes">
+            <p>
+              3 votes
+            </p>
+            <p>1 answers</p>
+            <p>10 views</p>
+          </div>  
+          <p> Only first time We have to manually type the home page address after entering email?</p>
+        </div>
+        <div class="but"> 
+
+          <button type="button" class="btn btn-primary">c++</button>
+          <button type="button" class="btn btn-secondary">error</button>
+          <button type="button" class="btn btn-success">windows</button>
+        </div>
+       
+      </div>
+
+   
+
+   
+
+    </div>  
+    <div class="yellow">
+
+      <div class="d-flex flex-column flex-md-row p-4 gap-4 py-md-5 align-items-center justify-content-center">
+        <div class="list-group">
+          <a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-3 one" aria-current="true">
+            <p> Hello World!</p>
+          </a>
+        <a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-3 two" aria-current="true">
+        <p>This is a collaboratively edited question and answer site for <b> professional and enthusiast programmers.</b> It's 100% free.
+
+          Got a question about the site itself? meta is the place to talk about things like what questions are appropriate, what tags we should use, etc.</p>
+        </a>
+        <a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-3 three" aria-current="true">
+          <div class="abd">
+            
+            <p>About</p>
+            <p>Help</p>
+            <p>Meta</p>
+            
+          </div>
+        </a>
+      </div>
+    </div>    
+  </div>
+   
+</body>
+</html>
